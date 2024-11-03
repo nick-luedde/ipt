@@ -1,0 +1,21 @@
+{
+  "include": ["env.d.ts", "client/**/*", "client/**/*.vue", "shared/**/*", "@ts-types/client/**/*", "@ts-types/shared/**/*"],
+  "vueCompilerOptions": {
+    "extensions": [
+      ".vue"
+    ]
+  },
+  "compilerOptions": {
+    // "checkJs": true,
+    "lib": ["ESNext", "DOM"],
+    "allowJs": true,
+    "composite": true,
+    "noEmit": true,
+    "strict": true,
+    "noImplicitThis": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+  }
+}

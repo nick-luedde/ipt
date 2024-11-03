@@ -1,0 +1,15 @@
+{
+  "include": ["env.d.ts", "server/**/*", "shared/**/*", "@ts-types/server/*", "@ts-types/shared/*", "node_modules/@types/**/*"],
+  "exclude": [],
+  "compilerOptions": {
+    // "checkJs": true,
+    "lib": ["ESNext"],
+    "allowJs": true,
+    "composite": true,
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  }
+}

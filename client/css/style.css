@@ -1,0 +1,443 @@
+/* THEME COLORS... */
+
+.dark-theme {
+  --primary-color: #171717;
+  --secondary-color: #333;
+  --highlight-color: #333;
+  --font-color: ghostwhite;
+  --label-color: rgb(200, 200, 200);
+  --soft-color: rgb(175, 175, 175);
+  --modal-glass-color: rgba(100, 100, 100, 0.95);
+  --orange-color: #ef7521;
+  --danger-color: #f91f52;
+  --warning-color: #ffd100;
+  --success-color: #029736;
+  --link-color: #467cfb;
+  --info-color: #7a8690;
+  --teal-color: #0d7dba;
+  --purple-color: #b86bff;
+  --light-color: #3d3d3d;
+  --focus-border-color: #426Bff;
+  --focus-shadow-color: rgba(66, 107, 255, 0.25);
+  --color-scheme: dark;
+}
+
+.light-theme {
+  --primary-color: ghostwhite;
+  --secondary-color: #eee;
+  --highlight-color: #eee;
+  --font-color: #171717;
+  --label-color: rgb(85, 85, 85);
+  --soft-color: rgb(175, 175, 175);
+  --modal-glass-color: rgba(51, 51, 51, 0.95);
+  --orange-color: #ef7521;
+  --danger-color: #c3002f;
+  --warning-color: #cc4100;
+  --success-color: #245d38;
+  --link-color: #3e8ed0;
+  --info-color: #001970;
+  --teal-color: #35647e;
+  --purple-color: #9426fc;
+  --light-color: #dbdbdb;
+  --focus-border-color: #485fc7;
+  --focus-shadow-color: rgba(72, 95, 199, 0.25);
+  --color-scheme: light;
+}
+
+.theme-independent-white-font {
+  color: ghostwhite !important;
+}
+
+.theme-independent-dark-font {
+  color: #171717 !important;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  color-scheme: var(--color-scheme);
+  height: 100%;
+}
+
+/* https://css-tricks.com/couple-takes-sticky-footer/ */
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: 100%;
+}
+
+.main-content {
+  /* padding for top nav with app-logo */
+  padding-top: 32px;
+  flex: 1 0 auto;
+}
+
+.main-footer {
+  display: flex;
+  align-items: end;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* scrollbar */
+/* ::-webkit-scrollbar {
+  width: 0.75em;
+} */
+
+/* hrs a bit less spacing */
+hr {
+  margin: .5rem 0;
+  height: 1px;
+  background-color: var(--soft-color);
+}
+
+/* Bulma overrides */
+/* .input,
+.textarea,
+select,
+.select {
+  box-shadow: none;
+  border-color: transparent;
+} */
+
+.full-height--32px {
+  height: calc(100vh - 32px);
+}
+
+.full-height--56px {
+  height: calc(100vh - 56px);
+}
+
+.body-has-nav {
+  padding-top: 32px;
+}
+
+.modal-background {
+  background-color: var(--modal-glass-color);
+}
+
+/* helper so that bulma buttons wrap text and size vertically */
+.tall-button {
+  white-space: normal !important;
+  height: auto !important;
+}
+
+/* Outline bulma button type elements on focus */
+.focus-border,
+.select>select:focus,
+.input:focus,
+.textarea:focus,
+.navbar-burger:focus,
+.delete:focus,
+.button:focus,
+.button.is-white:focus,
+.button.is-primary:focus,
+.button.is-white:focus,
+.button.is-black:focus,
+.button.is-dark:focus,
+.button.is-light:focus,
+.button.is-link:focus,
+.button.is-info:focus,
+.button.is-success:focus,
+.button.is-warning:focus,
+.button.is-danger:focus {
+  border: 1px solid var(--focus-border-color) !important;
+  box-shadow: 0 0 0 0.125em var(--focus-shadow-color) !important;
+}
+
+.input[type="date"], .input[type="datetime-local"] {
+  display: block;
+}
+
+.error-border {
+  border: 1px solid var(--danger-color);
+}
+
+/* Vertical align bulma/material icons */
+.icon-align {
+  position: relative;
+  top: 6px;
+}
+
+/* is-flex without !important */
+.is-flex-polite {
+  display: flex;
+}
+
+.white-space-wrap {
+  white-space: pre-wrap;
+}
+
+.sticky {
+  position: sticky;
+  z-index: 5;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 32px;
+  z-index: 5;
+}
+
+.sticky-header.has-small-tabs {
+  top: 64px;
+  z-index: 4;
+}
+
+.sticky-header.has-tabs {
+  top: 81px;
+  z-index: 4;
+}
+
+.force-32-height {
+  height: 32px !important;
+}
+
+/* workaround for BULMA columns horizontal scrolling */
+.columns {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+/* Sort indicators */
+.sort-asc::after {
+  content: "▲";
+  margin-left: 8px;
+}
+
+.sort-desc::after {
+  content: "▼";
+  margin-left: 8px;
+}
+
+.a-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Override for bulma media content overflow-x */
+.overflow-x-inherit {
+  overflow-x: inherit !important;
+}
+
+/* simple bottom-right overlay button */
+.bottom-right-overlay {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+  z-index: 1;
+}
+
+/* layout */
+
+/* horizontal scrolling container */
+.horizontal-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.horizontal-container-element {
+  flex: 0 0 auto;
+}
+
+.force-max-width-816 {
+  max-width: 816px !important;
+}
+
+/* helpers */
+.no-events {
+  cursor: default;
+  pointer-events: none;
+}
+
+.border-radius {
+  border-radius: 6px;
+}
+
+.border-radius-medium {
+  border-radius: 4px;
+}
+
+.border-radius-small {
+  border-radius: 2px;
+}
+
+.transparent-background {
+  background: transparent;
+}
+
+.border-top {
+  border-top: 1px solid var(--secondary-color);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.border-right {
+  border-right: 1px solid var(--secondary-color);
+}
+
+.border-full {
+  border: 1px solid var(--secondary-color);
+}
+
+.light-border-bottom {
+  border-bottom: 1px solid var(--light-color);
+}
+
+.light-border {
+  border: 1px solid var(--light-color);
+}
+
+.highlight-border {
+  border: 1px solid var(--highlight-color);
+}
+
+.highlight-border-bottom {
+  border-bottom: 1px solid var(--highlight-color);
+}
+
+.danger-border {
+  border: 1px solid var(--danger-color);
+}
+
+.warning-border {
+  border: 1px solid var(--warning-color);
+}
+
+.success-border {
+  border: 1px solid var(--success-color);
+}
+
+.link-border {
+  border: 1px solid var(--link-color);
+}
+
+.info-border {
+  border: 1px solid var(--info-color);
+}
+
+.teal-border {
+  border: 1px solid var(--teal-color);
+}
+
+.white-border {
+  border: 1px solid var(--primary-color);
+}
+
+.dark-border {
+  border: 1px solid var(--font-color);
+}
+
+.purple-text {
+  color: var(--purple-color) !important;
+}
+
+.highlight-link-outline:hover,
+.highlight-link-outline:focus {
+  outline: 1px solid var(--link-color);
+}
+
+.display-block {
+  display: block;
+}
+
+.height-full {
+  height: 100%;
+}
+
+.highlight-item {
+  background-color: var(--highlight-color);
+  color: var(--font-color);
+}
+
+.soft-background {
+  background-color: var(--soft-color);
+}
+
+.highlight-background {
+  background-color: var(--highlight-color);
+}
+
+.highlight-hover:hover {
+  background-color: var(--highlight-color);
+}
+
+.is-size-7-polite {
+  font-size: .75rem;
+}
+
+/* spinner (taken from how bulma does the is-loading spinner) */
+.bulma-spinner {
+  animation: spinAround 750ms infinite linear;
+  border: 2px solid;
+  border-radius: 9999px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  display: block;
+  height: 1em;
+  width: 1em;
+  position: relative;
+}
+
+.spinner {
+  animation-name: spinner;
+  animation-duration: 3500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* blink/flash */
+.flashing {
+  animation: flash 1s ease-in 3;
+}
+
+/* animations */
+@-moz-keyframes spinner {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes flash {
+  50% {
+    opacity: 25%;
+  }
+}
+
+@keyframes flash {
+  50% {
+    opacity: 25%;
+  }
+}
