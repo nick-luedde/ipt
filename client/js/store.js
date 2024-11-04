@@ -17,7 +17,7 @@ const store = (() => {
         lastDataFetch: new Date().toJSON(),
       },
       /** @type {IUser} */
-      user: { role: 'dev', email: 'Me', settings: { theme: 'Dark', queue: [], favoriteProjects: [] } },
+      user: { role: 'dev', email: 'Me', settings: { theme: 'Dark', queue: [], favoriteProjects: ['project-1'] } },
       session: 'session-id-123',
       workingQueue: [],
       errorMessage: '',

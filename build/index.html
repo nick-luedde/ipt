@@ -14248,7 +14248,32 @@ const MockDatabase = {
       accessibilityStatus: 'Open',
       iteration: '',
       planningNotes: 'Outline projects to include...',
-      program: 'N/A',
+      program: 'All',
+      hasPII: false,
+      links: [],
+      owner: 'Me',
+      backup: 'Me',
+      isPublic: false,
+      createdBy: 'Me',
+      createdDate: '2024-11-03T13:50:58.758Z',
+      modifiedBy: 'Me',
+      modifiedDate: '2024-11-03T13:50:58.758Z'
+    },
+    {
+      _key: '2',
+      id: 'project-1',
+      name: 'Project tracking app',
+      description: 'This app!',
+      version: '1.0',
+      status: 'Development',
+      categories: ['App'],
+      platforms: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Bulma.css'],
+      dependsOnProjects: [],
+      priority: 'High',
+      accessibilityStatus: 'Open',
+      iteration: '',
+      planningNotes: '',
+      program: 'All',
       hasPII: false,
       links: [],
       owner: 'Me',
@@ -14295,6 +14320,56 @@ const MockDatabase = {
       type: 'Task',
       priority: 'Medium',
       status: 'Open',
+      scheduledDate: null,
+      hours: null,
+      resolvedDate: '',
+      closedDate: '',
+      assignee: 'Me',
+      createdBy: 'Me',
+      createdDate: '2024-11-03T13:50:58.758Z',
+      modifiedBy: 'Me',
+      modifiedDate: '2024-11-03T13:50:58.758Z'
+    },
+    {
+      _key: '2',
+      id: 'item-1',
+      itemNumber: 101,
+      project: 'project-0',
+      deployment: '',
+      parent: '',
+      name: 'Add contact page',
+      description: 'Include links for contacting!',
+      tags: [],
+      files: [],
+      version: '1.0',
+      type: 'Task',
+      priority: 'Medium',
+      status: 'Testing',
+      scheduledDate: null,
+      hours: null,
+      resolvedDate: '',
+      closedDate: '',
+      assignee: 'Me',
+      createdBy: 'Me',
+      createdDate: '2024-11-03T13:50:58.758Z',
+      modifiedBy: 'Me',
+      modifiedDate: '2024-11-03T13:50:58.758Z'
+    },
+    {
+      _key: '3',
+      id: 'item-2',
+      itemNumber: 102,
+      project: 'project-1',
+      deployment: '',
+      parent: '',
+      name: 'Create client mocking files',
+      description: 'These will allow the app to run as a sample in the browser without making any actuall server calls',
+      tags: ['Sample'],
+      files: [],
+      version: '1.0',
+      type: 'Task',
+      priority: 'Crtical',
+      status: 'Closed',
       scheduledDate: null,
       hours: null,
       resolvedDate: '',
@@ -14786,7 +14861,7 @@ const store = (() => {
         lastDataFetch: new Date().toJSON(),
       },
       /** @type {IUser} */
-      user: { role: 'dev', email: 'Me', settings: { theme: 'Dark', queue: [], favoriteProjects: [] } },
+      user: { role: 'dev', email: 'Me', settings: { theme: 'Dark', queue: [], favoriteProjects: ['project-1'] } },
       session: 'session-id-123',
       workingQueue: [],
       errorMessage: '',
@@ -20743,20 +20818,20 @@ app.component('queue-view', QueueView);
       <section class="column">
         <h2 class="title is-6 mb-1">App settings</h2>
         <hr />
-        <apps-select
+        <!-- <apps-select
           label="Theme (reload app to update theme after changing it)"
           size="is-small"
           v-model="vm.user.settings.theme"
           :options="['Light', 'Dark']"
           @change="vm.saveUser"
-        ></apps-select>
+        ></apps-select> -->
 
-        <apps-checkbox
+        <!-- <apps-checkbox
           label="Subscribe to item assignment email notifications"
           size="is-small"
           v-model="vm.user.settings.getItemEmailNotifications"
           @change="vm.saveUser"
-        ></apps-checkbox>
+        ></apps-checkbox> -->
       </section>
 
       <section class="column">
@@ -20778,7 +20853,7 @@ app.component('queue-view', QueueView);
         </article>
       </section>
     </div>
-    <section class="is-flex is-flex-direction-column" style="max-height: 40vh">
+    <!-- <section class="is-flex is-flex-direction-column" style="max-height: 40vh">
       <admin-system-log
         class="m-2 p-2 light-border"
         style="
@@ -20788,7 +20863,7 @@ app.component('queue-view', QueueView);
           overflow-y: auto;
         "
       ></admin-system-log>
-    </section>
+    </section> -->
   </main>
 </template>
 

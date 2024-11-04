@@ -4,20 +4,20 @@
       <section class="column">
         <h2 class="title is-6 mb-1">App settings</h2>
         <hr />
-        <apps-select
+        <!-- <apps-select
           label="Theme (reload app to update theme after changing it)"
           size="is-small"
           v-model="vm.user.settings.theme"
           :options="['Light', 'Dark']"
           @change="vm.saveUser"
-        ></apps-select>
+        ></apps-select> -->
 
-        <apps-checkbox
+        <!-- <apps-checkbox
           label="Subscribe to item assignment email notifications"
           size="is-small"
           v-model="vm.user.settings.getItemEmailNotifications"
           @change="vm.saveUser"
-        ></apps-checkbox>
+        ></apps-checkbox> -->
       </section>
 
       <section class="column">
@@ -39,7 +39,7 @@
         </article>
       </section>
     </div>
-    <section class="is-flex is-flex-direction-column" style="max-height: 40vh">
+    <!-- <section class="is-flex is-flex-direction-column" style="max-height: 40vh">
       <admin-system-log
         class="m-2 p-2 light-border"
         style="
@@ -49,7 +49,7 @@
           overflow-y: auto;
         "
       ></admin-system-log>
-    </section>
+    </section> -->
   </main>
 </template>
 
